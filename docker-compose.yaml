@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  tm_db:
+    container_name: tm_db
+    image: postgres:12
+    restart: always
+    environment:
+        POSTGRES_PASSWORD: password
+        POSTGRES_DB: testdb
+
+
+  tm_php:
+    container_name: tm_php
+    build:
+      context: ./docker/php
+    depends_on:
+      - tm_db
+    volumes:
+      - ./app:/var/www
