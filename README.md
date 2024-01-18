@@ -1,1 +1,3 @@
-# testtm
+- git clone 
+- docker-compose up -d
+- docker exec -it tm_php php bin/console doctrine:migration:migrate
