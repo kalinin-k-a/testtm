@@ -17,8 +17,26 @@ services:
         resource: '../src/'
         exclude:
             - '../src/DependencyInjection/'
-            - '../src/Entity/'
+            - '../src/Domain/Entity/'
             - '../src/Kernel.php'
 
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+
+    App\Domain\Repository\TestsSessionAnswerRepositoryInterface:
+        class: App\Inrastructure\Repository\TestsSessionAnswerRepository
+
+    App\Domain\Repository\TestsSessionRepositoryInterface:
+        class: App\Inrastructure\Repository\TestsSessionRepository
+
+    App\Domain\Repository\TestRepositoryInterface:
+        class: App\Inrastructure\Repository\TestRepository
+
+    App\Domain\Repository\TestQuestionRepositoryInterface:
+        class: App\Inrastructure\Repository\TestsQuestionRepository
+
+    App\Domain\Repository\TestQuestionAnswerRepositoryInterface:
+        class: App\Inrastructure\Repository\TestQuestionsAnswerRepository
+
+    Symfony\Component\Console\Output\OutputInterface:
+        class: Symfony\Component\Console\Output\ConsoleOutput
+
+
